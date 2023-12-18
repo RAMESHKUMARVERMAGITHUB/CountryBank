@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Git Checkout') {
             steps {
-                git 'https://github.com/jaiswaladi246/CountryBank.git'
+                git 'https://github.com/rameshkumarvermagithub/CountryBank.git'
             }
         }
         
         stage('OWASP Dependency Check') {
             steps {
-                 dependencyCheck additionalArguments: ' --scan ./ ', odcInstallation: 'DC'
+                 dependencyCheck additionalArguments: ' --scan ./ ', odcInstallation: 'DP-Check'
                     dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
             }
         }
